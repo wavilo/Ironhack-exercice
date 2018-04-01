@@ -5,14 +5,76 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Ironhack exercice</title>
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="./CSS/style.css">
+    <title>Document</title>
 </head>
 
 <body>
-    <h1>Title</h1>
-    <p>blah blah</p>
-    <img src="https://media.giphy.com/media/tXL4FHPSnVJ0A/giphy.gif" alt="">
+    <header>
+        <h1>Will you beat our experimental program ?</h1>
+        <div class="progress">
+            <div class="progress-bar" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:50%">
+                40% Complete
+            </div>
+        </div>
+
+    </header>
+    <div class="canvas">
+        <canvas id="main-canvas" width="700" height="250"></canvas>
+
+        <canvas id="mini-canvas" width="700" height="250"></canvas>
+    </div>
+
+    <div class="side-screen">
+
+
+        <div class="random-text">
+            <h2>Welcome to our experimental program.</h2>
+        </div>
+        <div class="ball-type">
+            <h2>You currently have a ball of 1 velocity</h2>
+        </div>
+        <div id="gif-wrap">
+        </div>
+        <div class="game-rule">
+            <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Game Rules</button>
+            <div class="modal fade" id="myModal" role="dialog">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">Game Rules</h4>
+                        </div>
+                        <div class="modal-body">
+                            <p>Welcome to this experimental program where you will be tested to see if you can beat our computer.</p>
+                            <p>The goal is to destroy all red bricks with your green ball that you can't control it.</p>
+                            <p>That'it !</p>
+                            <p>If you are smart enough you will find power-up along your way</p>
+                            <p>...the random gifs are only here to show you that you will fail !</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    </div>
+
+
+
+
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+    <script src="./js/mainCanvas.js"></script>
+    <script src="./js/miniCanvas.js"></script>
+    <script src="./js/script.js"></script>
 </body>
 
 </html>
