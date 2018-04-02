@@ -2,6 +2,60 @@
 //Text Velocity
 /////////////////////////////////////
 
+////////////////////////////////////
+//random text message
+///////////////////////////////////
+
+function randomMessage() {
+  var nbMessage = Math.floor(Math.random() * 10);
+  switch (nbMessage) {
+    case 0:
+      msg = "I don't think you will make it";
+      break;
+    case 1:
+      msg = "Your life is miserable";
+      break;
+    case 2:
+      msg = "You should do something more interesting than playing this game";
+      break;
+    case 3:
+      msg = "You like watching random fail gif, right ?";
+      break;
+    case 4:
+      msg = "no one ever finished this game";
+      break;
+    case 5:
+      msg = "Please stop !!";
+      break;
+    case 6:
+      msg = "I'm a bot but and I'm not able to finish it...so you ??!!";
+      break;
+    case 7:
+      msg = "You are a looser 7";
+      break;
+    case 8:
+      msg = "You are a looser 8";
+      break;
+    case 9:
+      msg = "You are a looser 9";
+      break;
+  }
+  return msg;
+}
+
+//to change the message in the dom
+function changeMessage() {
+  var textInit = document.querySelector(".random-text2");
+  if (textInit.innerHTML == "Welcome to our experimental program.") {
+    textInit.innerHTML = randomMessage();
+  } else {
+    textInit.innerHTML = randomMessage();
+  }
+}
+
+//setinterval
+setInterval(changeMessage, 10000);
+
 /////////////////////////////////////
 //Random gif
 /////////////////////////////////////
