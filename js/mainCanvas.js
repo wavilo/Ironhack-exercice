@@ -18,7 +18,7 @@ var bricks = [];
 for (c = 0; c < brickColumnCount; c++) {
   bricks[c] = [];
   for (r = 0; r < brickRowCount; r++) {
-    bricks[c][r] = { x: 0, y: 0, status: 1 };
+    bricks[c][r] = { x: 0, y: 0, status: 1, brickCounter: 750 }; //add the brickCounter
   }
 }
 
@@ -44,7 +44,20 @@ function drawBricks() {
         bricks[c][r].y = brickY;
         ctx.beginPath();
         ctx.rect(brickX, brickY, brickWidth, brickHeight);
-        ctx.fillStyle = "#0095DD";
+        //test for the color of the bricks
+        for (c = 0; c < brickColumnCount; c++) {
+          for (r = 0; r < brickRowCount; r++) {
+            var b = bricks[c][r];
+            if (b.brickCounter == 750) {
+              ctx.fillStyle = "#c93424";
+            } else if (b.brickCounter <= 749) {
+              ctx.fillStyle = "#74f442";
+            } else if (b.brickCounter <= 749) {
+              ctx.fillStyle = "#";
+            }
+          }
+        }
+
         ctx.fill();
         ctx.closePath();
       }
@@ -52,11 +65,12 @@ function drawBricks() {
   }
 }
 
+//function for collision and brickCounter
 function collisionDetection() {
   for (c = 0; c < brickColumnCount; c++) {
     for (r = 0; r < brickRowCount; r++) {
       var b = bricks[c][r];
-      if (b.status == 1) {
+      if (b.brickCounter > 0) {
         if (
           x > b.x &&
           x < b.x + brickWidth &&
@@ -64,12 +78,34 @@ function collisionDetection() {
           y < b.y + brickHeight
         ) {
           dy = -dy;
-          b.status = 0;
+          b.brickCounter = b.brickCounter - 1;
         }
+      } else if ((b.brickCounter = 0)) {
+        b.status = 0;
       }
     }
   }
 }
+
+//this collision is working
+// function collisionDetection() {
+//   for (c = 0; c < brickColumnCount; c++) {
+//     for (r = 0; r < brickRowCount; r++) {
+//       var b = bricks[c][r];
+//       if (b.status == 1) {
+//         if (
+//           x > b.x &&
+//           x < b.x + brickWidth &&
+//           y > b.y &&
+//           y < b.y + brickHeight
+//         ) {
+//           dy = -dy;
+//           b.status = 0;
+//         }
+//       }
+//     }
+//   }
+// }
 
 function draw() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
