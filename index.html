@@ -48,16 +48,19 @@
 
     </header>
     <div class="canvas">
-        <canvas id="main-canvas" width="700" height="250"></canvas>
         <div class="mini-game">
-            <h2>Please wait for the next question</h2>
+            <h2>Click on the new question button</h2>
 
             <button class="btn btn-default btn-lg btn-block true btn-reponse">True</button>
 
             <button class="btn btn-default btn-lg btn-block false btn-reponse">False</button>
-
-            <p class="congrats-message">Your result</p>
+            <div class="result-new">
+                <p class="congrats-message"> </p>
+                <button class="btn btn-default btn-lg btn-question">New question</button>
+            </div>
         </div>
+
+        <canvas id="main-canvas" width="700" height="250"></canvas>
 
 
     </div>
@@ -66,10 +69,18 @@
 
 
         <div class="ball-type">
-            <h2>Ball speed:
-                <span class="speed">0</span>
+            <h2>Bricks destroyed:
+                <span class="score">0</span>
+                <span> / 64</span>
+            </h2>
+            <h2>Good answers:
+                <span class="answers">0</span>
+            </h2>
+            <h2>Current speed:
+                <span class="speed">0.1</span>
             </h2>
         </div>
+
         <div class="random-text">
             <h2 class="random-text2">Welcome to our experimental program.</h2>
         </div>

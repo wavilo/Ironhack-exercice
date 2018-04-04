@@ -1,6 +1,4 @@
-/////////////////////////////////////
-//Text Velocity
-/////////////////////////////////////
+//current speed
 
 ////////////////////////////////////
 //random text message
@@ -22,7 +20,7 @@ function randomMessage() {
       msg = "You like watching random fail gif, right ?";
       break;
     case 4:
-      msg = "no one ever finished this game";
+      msg = "";
       break;
     case 5:
       msg = "Please stop !!";

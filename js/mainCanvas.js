@@ -1,35 +1,25 @@
 //new test
 var canvas = document.querySelector("#main-canvas");
 var ctx = canvas.getContext("2d");
-var ballRadius = 9;
+var ballRadius = 5;
 var x = 300;
-var y = 200;
-var speed = 0;
-var dx = 2 + speed;
-var dy = -2 - speed;
-var brickRowCount = 2;
-var brickColumnCount = 6;
+var y = 230;
+var directionX = 1;
+var directionY = -1;
+var dx = 0.1;
+var dy = 0.1;
+var brickRowCount = 8;
+var brickColumnCount = 8;
 var brickWidth = 75;
 var brickHeight = 20;
-var brickPadding = 10;
-var brickOffsetTop = 100;
-var brickOffsetLeft = 100;
+var brickPadding = 5;
+var brickOffsetTop = 5;
+var brickOffsetLeft = 30;
 
 if (score === undefined) {
   var score = 0;
-} else {
-  var score = 12;
 }
 
-var bricks = [];
-for (c = 0; c < brickColumnCount; c++) {
-  bricks[c] = [];
-  for (r = 0; r < brickRowCount; r++) {
-    bricks[c][r] = { x: 0, y: 0, status: 1 }; //add the brickCounter
-  }
-}
-
-//this collision is working
 function collisionDetection() {
   for (c = 0; c < brickColumnCount; c++) {
     for (r = 0; r < brickRowCount; r++) {
@@ -41,13 +31,12 @@ function collisionDetection() {
           y > b.y &&
           y < b.y + brickHeight
         ) {
-          dy = -dy;
+          directionY = -directionY;
           b.status = 0;
           score++;
           if (score == brickRowCount * brickColumnCount) {
             drawBricks();
             collisionDetection();
-            score = 12;
           }
         }
       }
@@ -61,11 +50,17 @@ function drawBall() {
   ctx.arc(x, y, ballRadius, 0, Math.PI * 2);
   ctx.fillStyle = "#00ff99";
   ctx.fillStroke = "#0033FF";
-  ctx.Stroke = "10";
   ctx.fill();
   ctx.closePath();
 }
 
+var bricks = [];
+for (c = 0; c < brickColumnCount; c++) {
+  bricks[c] = [];
+  for (r = 0; r < brickRowCount; r++) {
+    bricks[c][r] = { x: 0, y: 0, status: 1 }; //add the brickCounter
+  }
+}
 //Brick
 function drawBricks() {
   for (c = 0; c < brickColumnCount; c++) {
@@ -86,9 +81,14 @@ function drawBricks() {
 }
 
 function drawScore() {
-  ctx.font = "16px Arial";
-  ctx.fillStyle = "#0095DD";
-  ctx.fillText("Score: " + score, 8, 20);
+  // ctx.font = "16px Arial";
+  // ctx.fillStyle = "#0095DD";
+  // //ctx.fillText("Score: " + score, 8, 20);
+  $(".score").html(score);
+  if (score === 64) {
+    //alert("congratz");
+    console.log("gg");
+  }
 }
 
 function draw() {
@@ -99,14 +99,15 @@ function draw() {
   collisionDetection();
 
   if (x + dx > canvas.width - ballRadius || x + dx < ballRadius) {
-    dx = -dx;
+    directionX = -directionX;
   }
   if (y + dy > canvas.height - ballRadius || y + dy < ballRadius) {
-    dy = -dy;
+    directionY = -directionY;
   }
 
-  x += dx;
-  y += dy;
+  x += dx * directionX;
+  y += dy * directionY;
+  $(".speed").html(dx);
 }
 
-setInterval(draw, 10);
+setInterval(draw, 30);
