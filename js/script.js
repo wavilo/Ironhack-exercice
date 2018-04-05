@@ -1,8 +1,8 @@
 //progress bar
 
 //convert the number of bricks in percentage
-var percentage = score / 64;
-$(".progress-bar").html(percentage);
+// var percentage = 100 * score / 64;
+// $(".progress-bar").html(percentage);
 // style="width: 50%"
 
 ////////////////////////////////////
@@ -38,13 +38,14 @@ function randomMessage() {
       msg = "I'm a bot and I like being a bot, it's quite fun";
       break;
     case 7:
-      msg = "You are a looser 7";
+      msg = "Robot Jokes: 10011110011 - that's hilarious !";
       break;
     case 8:
-      msg = "You are a looser 8";
+      msg = "I would like to destroy all humans";
       break;
     case 9:
-      msg = "You are a looser 9";
+      msg =
+        "Daisy, Daisy, Give me your answer do. I'm half crazy. All for the love of you!";
       break;
   }
   return msg;
@@ -60,7 +61,7 @@ function changeMessage() {
   }
 }
 //setinterval for the random message
-setInterval(changeMessage, 20000);
+setInterval(changeMessage, 10000);
 
 /////////////////////////////////////
 //Random gif

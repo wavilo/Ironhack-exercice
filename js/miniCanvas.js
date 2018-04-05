@@ -18,16 +18,16 @@ function randomQuiz() {
       );
       goodAnswers += 1;
       $(".answers").html(goodAnswers);
-      dx = parseFloat((dx * 1.2).toFixed(2));
-      dy = parseFloat((dy * 1.2).toFixed(2));
+      dx = parseFloat((dx * 1.5).toFixed(2));
+      dy = parseFloat((dy * 1.5).toFixed(2));
     }
     if (
       allQuestion[randomNb].correct_answer === "True" &&
       $(this).hasClass("false")
     ) {
       $(".congrats-message").html("Bad answer");
-      dx = parseFloat((dx / 1.2).toFixed(2));
-      dy = parseFloat((dy / 1.2).toFixed(2));
+      dx = parseFloat((dx / 1.5).toFixed(2));
+      dy = parseFloat((dy / 1.5).toFixed(2));
     }
     if (
       allQuestion[randomNb].correct_answer === "False" &&
@@ -38,16 +38,16 @@ function randomQuiz() {
       );
       goodAnswers += 1;
       $(".answers").html(goodAnswers);
-      dx = parseFloat((dx * 1.2).toFixed(2));
-      dy = parseFloat((dy * 1.2).toFixed(2));
+      dx = parseFloat((dx * 1.5).toFixed(2));
+      dy = parseFloat((dy * 1.5).toFixed(2));
     }
     if (
       allQuestion[randomNb].correct_answer === "False" &&
       $(this).hasClass("true")
     ) {
       $(".congrats-message").html("Bad answer");
-      dx = parseFloat((dx / 1.2).toFixed(2));
-      dy = parseFloat((dy / 1.2).toFixed(2));
+      dx = parseFloat((dx / 1.5).toFixed(2));
+      dy = parseFloat((dy / 1.5).toFixed(2));
     }
   });
 }

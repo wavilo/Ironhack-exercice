@@ -82,6 +82,11 @@ function drawScore() {
   // ctx.fillStyle = "#0095DD";
   // //ctx.fillText("Score: " + score, 8, 20);
   $(".score").html(score);
+  var percentage = Math.floor(100 * score / 64);
+  $(".progress-bar").html(percentage + "%");
+  $(".progress-bar")
+    .css("width", percentage + "%")
+    .attr("aria-valuenow", percentage);
   if (score === 64) {
     //alert("congratz");
     console.log("gg");
