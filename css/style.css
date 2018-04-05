@@ -75,10 +75,17 @@ canvas {
 .ball-type {
   width: 380px;
   height: 90px;
-  border: solid 1px black;
+  border: solid 0.1px black;
   border-radius: 10px;
   margin: auto;
   margin-bottom: 10px;
+  color: white;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 36, 12, 1) 0%,
+    rgba(9, 108, 121, 0.7833508403361344) 35%,
+    rgba(0, 212, 255, 1) 100%
+  );
 }
 
 .random-text {
