@@ -1,4 +1,9 @@
-//current speed
+//progress bar
+
+//convert the number of bricks in percentage
+var percentage = score / 64;
+$(".progress-bar").html(percentage);
+// style="width: 50%"
 
 ////////////////////////////////////
 //random text message
@@ -20,13 +25,17 @@ function randomMessage() {
       msg = "You like watching random fail gif, right ?";
       break;
     case 4:
-      msg = "";
+      if (goodAnswers > 1) {
+        msg = "You only have " + goodAnswers + " good answers, That's pitiful";
+      } else {
+        msg = "You are a looser";
+      }
       break;
     case 5:
       msg = "Please stop !!";
       break;
     case 6:
-      msg = "I'm a bot but and I'm not able to finish it...so you ??!!";
+      msg = "I'm a bot and I like being a bot, it's quite fun";
       break;
     case 7:
       msg = "You are a looser 7";
@@ -50,9 +59,8 @@ function changeMessage() {
     textInit.innerHTML = randomMessage();
   }
 }
-
-//setinterval
-setInterval(changeMessage, 10000);
+//setinterval for the random message
+setInterval(changeMessage, 20000);
 
 /////////////////////////////////////
 //Random gif

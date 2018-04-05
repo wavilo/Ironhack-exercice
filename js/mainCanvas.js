@@ -15,10 +15,7 @@ var brickHeight = 20;
 var brickPadding = 5;
 var brickOffsetTop = 5;
 var brickOffsetLeft = 30;
-
-if (score === undefined) {
-  var score = 0;
-}
+var score = 0;
 
 function collisionDetection() {
   for (c = 0; c < brickColumnCount; c++) {

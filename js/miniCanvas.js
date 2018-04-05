@@ -1,63 +1,59 @@
 //function to launch a question
+
 var goodAnswers = 0;
-$(".answers").html(goodAnswers);
+
+function randomQuiz() {
+  var randomNb = Math.floor(Math.random() * 34); // random number on the array
+  $(".mini-game h2").html(allQuestion[randomNb].question); //random question
+  $(".congrats-message").html("Please choose an answer"); //message
+  //the click function on true or false
+  $(".btn-reponse").click(function() {
+    $(".btn-reponse").off();
+    if (
+      allQuestion[randomNb].correct_answer === "True" &&
+      $(this).hasClass("true")
+    ) {
+      $(".congrats-message").html(
+        "Good answer, you increase the speed of the ball"
+      );
+      goodAnswers += 1;
+      $(".answers").html(goodAnswers);
+      dx = parseFloat((dx * 1.2).toFixed(2));
+      dy = parseFloat((dy * 1.2).toFixed(2));
+    }
+    if (
+      allQuestion[randomNb].correct_answer === "True" &&
+      $(this).hasClass("false")
+    ) {
+      $(".congrats-message").html("Bad answer");
+      dx = parseFloat((dx / 1.2).toFixed(2));
+      dy = parseFloat((dy / 1.2).toFixed(2));
+    }
+    if (
+      allQuestion[randomNb].correct_answer === "False" &&
+      $(this).hasClass("false")
+    ) {
+      $(".congrats-message").html(
+        "Good answer, you increase the speed of the ball"
+      );
+      goodAnswers += 1;
+      $(".answers").html(goodAnswers);
+      dx = parseFloat((dx * 1.2).toFixed(2));
+      dy = parseFloat((dy * 1.2).toFixed(2));
+    }
+    if (
+      allQuestion[randomNb].correct_answer === "False" &&
+      $(this).hasClass("true")
+    ) {
+      $(".congrats-message").html("Bad answer");
+      dx = parseFloat((dx / 1.2).toFixed(2));
+      dy = parseFloat((dy / 1.2).toFixed(2));
+    }
+  });
+}
 
 $(".btn-question").click(function() {
-  console.log("yo");
-  function randomQuiz() {
-    var randomNb = Math.floor(Math.random() * 34); // random number on the array
-    $(".mini-game h2").html(allQuestion[randomNb].question); //random question
-    $(".congrats-message").html("Please choose an answer"); //message
-    console.log(randomNb);
-
-    //the click function on true or false
-    $(".btn-reponse").click(function() {
-      console.log("reponse");
-      $(".btn-reponse").off();
-      if (
-        allQuestion[randomNb].correct_answer === "True" &&
-        $(this).hasClass("true")
-      ) {
-        $(".congrats-message").html(
-          "Good answer, you increase the speed of the ball"
-        );
-        goodAnswers++;
-        dx = parseFloat((dx * 1.2).toFixed(2));
-        dy = parseFloat((dy * 1.2).toFixed(2));
-        randomQuiz();
-      }
-      if (
-        allQuestion[randomNb].correct_answer === "True" &&
-        $(this).hasClass("false")
-      ) {
-        $(".congrats-message").html("Bad answer");
-        dx = parseFloat((dx / 1.2).toFixed(2));
-        dy = parseFloat((dy / 1.2).toFixed(2));
-        randomQuiz();
-      }
-      if (
-        allQuestion[randomNb].correct_answer === "False" &&
-        $(this).hasClass("false")
-      ) {
-        $(".congrats-message").html(
-          "Good answer, you increase the speed of the ball"
-        );
-        goodAnswers++;
-        dx = parseFloat((dx * 1.2).toFixed(2));
-        dy = parseFloat((dy * 1.2).toFixed(2));
-        randomQuiz();
-      }
-      if (
-        allQuestion[randomNb].correct_answer === "False" &&
-        $(this).hasClass("true")
-      ) {
-        $(".congrats-message").html("Bad answer");
-        dx = parseFloat((dx / 1.2).toFixed(2));
-        dy = parseFloat((dy / 1.2).toFixed(2));
-        randomQuiz();
-      }
-    });
-  }
+  randomQuiz();
 });
 
 //All questions
