@@ -88,8 +88,9 @@ function drawScore() {
     .css("width", percentage + "%")
     .attr("aria-valuenow", percentage);
   if (score === 64) {
-    //alert("congratz");
-    console.log("gg");
+    ctx.font = "30px VT323";
+    ctx.fillStyle = "#4CAF50";
+    ctx.fillText("Congratulation ! you find me I'm Isaac ASIMOV", 100, 150);
   }
 }
 
