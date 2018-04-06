@@ -1,9 +1,13 @@
+playlist = {
+  fail: "./sound/bad-beep.wav"
+};
+
 //function to launch a question
 
 var goodAnswers = 0;
 
 function randomQuiz() {
-  var randomNb = Math.floor(Math.random() * 34); // random number on the array
+  var randomNb = Math.floor(Math.random() * 33); // random number on the array
   $(".mini-game h2").html(allQuestion[randomNb].question); //random question
   $(".congrats-message").html("Please choose an answer"); //message
   //the click function on true or false
@@ -13,6 +17,7 @@ function randomQuiz() {
       allQuestion[randomNb].correct_answer === "True" &&
       $(this).hasClass("true")
     ) {
+      document.getElementById("success").play();
       $(".congrats-message").html(
         "Good answer, you increase the speed of the ball"
       );
@@ -25,6 +30,7 @@ function randomQuiz() {
       allQuestion[randomNb].correct_answer === "True" &&
       $(this).hasClass("false")
     ) {
+      document.getElementById("fail").play();
       $(".congrats-message").html(
         "Bad answer, you decrease the speed of the ball"
       );
@@ -35,6 +41,7 @@ function randomQuiz() {
       allQuestion[randomNb].correct_answer === "False" &&
       $(this).hasClass("false")
     ) {
+      document.getElementById("success").play();
       $(".congrats-message").html(
         "Good answer, you increase the speed of the ball"
       );
@@ -47,6 +54,7 @@ function randomQuiz() {
       allQuestion[randomNb].correct_answer === "False" &&
       $(this).hasClass("true")
     ) {
+      document.getElementById("fail").play();
       $(".congrats-message").html(
         "Bad answer, you decrease the speed of the ball"
       );
