@@ -1,7 +1,3 @@
-playlist = {
-  fail: "./sound/bad-beep.wav"
-};
-
 //function to launch a question
 
 var goodAnswers = 0;

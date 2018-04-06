@@ -1,10 +1,3 @@
-//progress bar
-
-//convert the number of bricks in percentage
-// var percentage = 100 * score / 64;
-// $(".progress-bar").html(percentage);
-// style="width: 50%"
-
 ////////////////////////////////////
 //random text message
 ///////////////////////////////////
@@ -51,7 +44,7 @@ function randomMessage() {
   return msg;
 }
 
-//to change the message in the dom
+//to change the random message
 function changeMessage() {
   var textInit = document.querySelector(".random-text2");
   if (textInit.innerHTML == "Welcome to our experimental program.") {
