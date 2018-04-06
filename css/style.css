@@ -143,3 +143,7 @@ canvas {
   width: 300px;
   background-color: #e7e7e7;
 }
+
+.progress-bar {
+  color: black;
+}

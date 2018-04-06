@@ -86,8 +86,8 @@ function drawScore() {
     .attr("aria-valuenow", percentage);
   if (score === 64) {
     ctx.font = "30px VT323";
-    ctx.fillStyle = "#4CAF50";
-    ctx.fillText("Congratulation ! you find me I'm Isaac ASIMOV", 100, 150);
+    ctx.fillStyle = "#000000";
+    ctx.fillText("Congratulation ! you find me I'm Isaac ASIMOV", 100, 220);
   }
 }
 
