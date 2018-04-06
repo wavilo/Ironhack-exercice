@@ -1,5 +1,13 @@
 body {
   font-family: "Quicksand", sans-serif;
+  background-image: linear-gradient(
+    to right bottom,
+    #e5e9ea,
+    #e1e3e5,
+    #dddedf,
+    #d8d8d9,
+    #d3d3d3
+  );
 }
 
 h1 {
@@ -80,11 +88,13 @@ canvas {
   margin: auto;
   margin-bottom: 10px;
   color: white;
-  background: linear-gradient(
-    90deg,
-    rgba(0, 36, 12, 1) 0%,
-    rgba(9, 108, 121, 0.7833508403361344) 35%,
-    rgba(0, 212, 255, 1) 100%
+  background-image: linear-gradient(
+    to right bottom,
+    #5bc0de,
+    #52b2cf,
+    #4aa5c0,
+    #4198b1,
+    #398ba3
   );
 }
 
@@ -96,11 +106,13 @@ canvas {
   margin: auto;
   margin-bottom: 10px;
   background: rgb(0, 36, 12);
-  background: linear-gradient(
-    90deg,
-    rgba(0, 36, 12, 1) 0%,
-    rgba(9, 108, 121, 0.7833508403361344) 35%,
-    rgba(0, 212, 255, 1) 100%
+  background-image: linear-gradient(
+    to right bottom,
+    #5bc0de,
+    #52b2cf,
+    #4aa5c0,
+    #4198b1,
+    #398ba3
   );
 }
 .random-text h2 {
